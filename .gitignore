@@ -1,3 +1,8 @@
 node_modules/
 .env
-data/*.sqlite
+data/
+*.sqlite
+*.png
+qa-*.json
+coverage/
+.DS_Store
