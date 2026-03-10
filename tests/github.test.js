@@ -39,10 +39,12 @@ test('fetchRepoMetrics returns commit count and pushed_at with mocked fetch', as
 
   try {
     const metrics = await fetchRepoMetrics('nodejs', 'node', '');
-    assert.deepEqual(metrics, {
-      commits24h: 3,
-      lastCommitAt: '2026-03-09T21:00:00.000Z',
-    });
+    assert.equal(metrics.commits24h, 3);
+    assert.equal(metrics.lastCommitAt, '2026-03-09T21:00:00.000Z');
+    assert.equal(typeof metrics.proofScore, 'number');
+    assert.equal(typeof metrics.releaseRecencyScore, 'number');
+    assert.equal(typeof metrics.ciFreshnessScore, 'number');
+    assert.equal(typeof metrics.issueResponsivenessScore, 'number');
   } finally {
     global.fetch = originalFetch;
   }

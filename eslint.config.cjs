@@ -18,6 +18,8 @@ module.exports = [
         window: 'readonly',
         document: 'readonly',
         navigator: 'readonly',
+        localStorage: 'readonly',
+        location: 'readonly',
         global: 'readonly',
         Buffer: 'readonly',
       },
